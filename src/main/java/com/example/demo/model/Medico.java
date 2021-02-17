@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -22,8 +23,7 @@ public class Medico {
     private String nome;
 
     @NotNull
-    @Size(min = 7, max = 7)
-    private int crm;
+    private String crm;
 
     @Size(min=13, max =14)
     private String telefone;
@@ -40,4 +40,10 @@ public class Medico {
     @ManyToOne
     @JsonIgnoreProperties("medico")
     private Especialidade2 especialidade2;
+
+    private String cep;
+    private String logradouro;
+    private String bairro;
+    private String localidade;
+    private String uf;
 }
